@@ -1,19 +1,40 @@
-//class auto
+class Auto {
+  
+   PImage im2;
+   float x, y, t;
+   Boolean moviz, movde;
 
-//PROPIEDADES
-//imagen del auto (PImage)
-//declarar x, y, tamanio (t)
+   Auto (){
+   im2 = loadImage("azul.png");
+   x = 10;
+   y = 300;
+   t = 120;
+   }
 
-
-//CONSTRUCTOR (setup de la clase)
-//valores iniciales de las variables
-// x= ;
-// y= ;
-// t= ;
-
-//METODOS
-//movimiento()
-//limites (), para que no salga de pantalla el auto
-
-//keyPressed:
-//las teclas que el usuario deberia presionar para mover el auto, ya sea con keyCode = up y down o left y right
+ void actualizar (){
+   if (mousePressed){
+     moviz = true;
+   } else {
+     moviz = false;
+   }
+   
+   float d = dist (x, y, mouseX, mouseY);
+   if (d < t/2)
+    movde = true;
+    else
+    movde = false;
+   
+   println ( "moviz:" + moviz);
+   println ("movde:" + movde);
+  }
+ void dibujar (){
+  image(im2, x, y);
+ }
+ 
+ void moverAuto(){
+   if (moviz && movde){
+     x = mouseX;
+     y = mouseY;
+  }
+ }
+}
