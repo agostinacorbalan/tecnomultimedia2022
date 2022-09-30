@@ -1,13 +1,14 @@
 //Corbalán Agostina 91301/2
-//Minijuego: 
-//llevar al auto de carreras hasta la meta sin tocar los obstaculos
+//llevar el auto en la ruta sin tocar los obstaculos
 
-//setup:
-//el tamaño de la pantalla (size);
-//imagen de la ruta (diseño), ubicacion y tamanio
+Ruta ruta;
 
-//draw:
-/* auto()
-   meta()
-   obstaculo()
-*/
+void setup (){
+ ruta = new Ruta ();
+ size (900, 400);
+}
+
+void draw (){
+ruta.actualizar();
+ruta.dibujar();
+}
