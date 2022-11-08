@@ -1,29 +1,20 @@
-/*
-Mar mar;
-import processing.sound;
+//Agostina Corbalan 91301/2 - Comision 2
 
-void setup(){  
-size (x, y);
-mar = new Mar();
-oceanSong = new SoundFiles (this; "");
+//¡¡PROBLEMA CON LAS BURBUJAS (solo se muestra una y se carga diferentes cada vez)!!
+
+/* import processing.sound.*;
+SoundFile musica; */
+Game g;
+
+void setup (){
+  g = new Game();
+  size (600, 400);
+/*  musica = new SoundFile (this, "mar.mp3");
+  musica.loop();  */
 }
 
 void draw (){
- mar.dibujar
- mar.actualizar
- oceanSong.loop();  //musica de fondo
-
+ g.dibujar(); 
+ g.actualizar();
+ g.movimiento();
 }
-
-void mouseMoved (){  
-  mar.moved();
-}
-
-void pressed(){
-  mar.pressed();
-}
-
-void keyPressed(){
-  mar.keyPressed();
-}
-*/
