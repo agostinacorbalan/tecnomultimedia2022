@@ -3,19 +3,23 @@
 //¡PROBLEMA CON LAS BURBUJAS (solo se muestra una y se carga diferentes cada vez)!
 //Lo mismo con los "enemigos", solo carga una imagen.
 
-/* import processing.sound.*;
-SoundFile musica; */
-Game g;
+import ddf.minim.*;
+Minim minim;
+AudioPlayer player;
+Contenedor game;
 
 void setup (){
-  g = new Game();
+  minim = new Minim (this);
+  player = minim.loadFile ("a.mp3");
+  game = new Contenedor();
   size (600, 400);
-/*  musica = new SoundFile (this, "mar.mp3");
-  musica.loop();  */
+  player.play();
+  player.loop();
 }
 
 void draw (){
- g.dibujar(); 
- g.actualizar();
- g.movimiento();
+ game.dibujar(); 
+ game.actualizar();
+ game.movimiento();
+ game.pressed();
 }
