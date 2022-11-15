@@ -1,39 +1,25 @@
-class Enemigo{ //BUSCAR MANERA DE QUE LOS OBSTACULOS SEAN VARIOS Y SE REINICIEN O REBOTEN EN LA PANTALLA 
+class Enemigo{ //BUSCAR MANERA DE QUE LOS ANILLOS SE MUEVAN EN UNA DIRECCION VERTICAL
   PImage obstaculos;
-  float x, y, tamX, tamY, moveX, moveY;
-  int vel, direccion;
+  float x, y;
+  int time1 = 3000;
+  int time2 = 5000;
+  float t = 0;
  Enemigo (){
-
- x = random (0, width);
-  y = random (-height, -5);
-  vel = 2;
-  obstaculos = loadImage ("../data/ob-" + int(random(3))+ ".png");
- }  
-  void dibujar(){
-   push();
-   image (obstaculos, x, y);
-   pop();
-   this.actualizar();
+   x = random (height);
+   y =  -80;
+   t = width/2;
+  obstaculos = loadImage ("ob-3.png");
+ }
+   void movimiento(){
+     int currentTime = millis();
+     if(currentTime >time2){
+       x -=1.2;
+     } else if (currentTime >time1){
+       x +=1.5;
+     } 
+   }
+ void dibujar(int x, int y){
+   image (obstaculos, t, x, y, 30);
+   movimiento();
   }
- 
- void actualizar(){      //De este manera no cargan las imagenes ni se reinician
-   x--;
-   y = y--; 
-   if (x > width){
-    x = 0; 
-   }
-   if (y <=5){
-     y = 11;
-   } else if (y >= width){ //-5
-     y = width; //-11
-   }
-   reiniciar();
  }
-  void reiniciar(){
-    if ( x > width-100){
-    y = random (height);
-    x= -100;
-    vel= 2; 
-    }
- }
-}
