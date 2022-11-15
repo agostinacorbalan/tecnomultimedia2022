@@ -15,7 +15,7 @@ class Burbuja{
   }
   
  void dibujar (){
-    image( imagen, x, y);
+    image(imagen, x, y);
   }
 
  void reutilizarBurbuja(){
