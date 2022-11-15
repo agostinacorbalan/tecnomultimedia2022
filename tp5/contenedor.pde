@@ -14,18 +14,18 @@ void dibujar(){
   mar.dibujarFondo();
   mar.dibujar();
   pez.dibujar();
-  enemigo.dibujar();
+  enemigo.dibujar(1,2); 
   pantalla.dibujar();
 
  }
 void actualizar(){
   mar.actualizar();
-  enemigo.actualizar();
  }
  
 void movimiento(){
   pez.moverPez(); 
   pez.movimiento();
+  enemigo.movimiento();
  }
  void pressed(){
   pantalla.pressed(); 
