@@ -1,5 +1,4 @@
-//esta clase contiene el arreglo de burbujas 
- 
+//esta clase contiene el arreglo de burbujas y la imagen del fondo 
  class Mar{ 
   PImage bg, obstaculos;
   int cant;
