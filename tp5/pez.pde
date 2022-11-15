@@ -8,24 +8,23 @@ class Pez{ //Movimiento y colision del pez
   Pez(){
  verde = loadImage ("pez.png"); 
  x = 100;
- y = width/2; //2-10
+ y = width/2; 
  t = 60; 
- vida = 100;
+ vida = 1; 
   }
 
 void dibujar(){
- image (verde, x, y);
+ image (verde, x, y, 110, 60);
  this.dibujarVida(); 
-
  }
  
 void dibujarVida(){ 
    fill(0);
-   rect(0, 0, width, height/20);
+   rect(0, 0, 90, height/20);
    fill(0, 100, 0);
-   rect(0, 0, map(vida, 0, 100, 0, width), height/20);
+   rect (0, 0, 90, height/20);
    fill(255, 255, 0);
-   text("Vida: " + vida + "%", height/20, height/25);
+   text("Vida: " + vida, height/20, height/25);
  }
 
 void movimiento(){
@@ -39,9 +38,6 @@ void movimiento(){
     movde = true;
   } else {
     movde = false;
-   
-  // println ( "moviz:" + moviz);
-  // println ("movde:" + movde);
   }  
 }
 
