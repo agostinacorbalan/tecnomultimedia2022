@@ -1,45 +1,22 @@
-class Portada { //este sector sigo trabajando
-
- /* float x, y, tam;
-  String este;
-  int ganar, perder, select;
-  PImage fondo, titulo;
-  color colorFondo, colorTexto;
-  boolean detectar;
-  Game g;
- 
-  Portada(Game g; int x, int y, int tam, String este){
-    this.g = g;
-    this.este = este;
-    this.x = x;
-    this.y = y;
-    this.tam =tam;   
- }
+class Portada { // 
+ int posX1, posY1, posX2, posY2, tam1, tam2;
+ String texto1, texto2;
+ Portada ( String texto1_, int posX1_, int posY1_, int tam1_, String texto2_, int posX2_, int posY2_, int tam2_){
+  texto1 = texto1_;
+  posX1 = posX1_;
+  posY1= posY1_;
+  tam1 = tam1_;
+  texto2 = texto2_;
+  posX2 = posX2_;
+  posY2= posY2_;
+  tam2=tam2_;
+  }
  
  void dibujar(){
-   if (this.este.equals("Principal")){
-     push();
-     fill(this.colorFondo);
-     rect(this.x, this.y, this.tam, this.tam);
-     fill(this.colorTexto);
-     text("Comenzar", this.x + this.tam/2, this.y + this.tam/2);
-     pop(); 
+   fill(250);
+   textSize (tam1);
+   text (texto1, posX1, posY1);
+   textSize (tam2);
+   text (texto2, posX2, posY2);
  }
-  if (this.este.equals("Reiniciar")){
-     push();
-     fill(this.colorFondo);
-     rect(this.x, this.y, this.tam, this.tam);
-     fill(this.colorTexto);
-     text("Reiniciar", this.x + this.tam/2, this.y + this.tam/2);
-     pop();    
-  }
- }
-
- void pressed(){
-   if (mousePressed && this.g.estado == 0 && this.este.equals("Principal")){
-     this.g.estado = 1;
-   } else if (mousePressed && this.g.estado == 1 && this.este.equals("Reiniciar")){
-     this.g.estado = 0;
-   }
-  } */
-}
+} 
