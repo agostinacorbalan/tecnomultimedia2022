@@ -14,6 +14,7 @@ class Pantalla { //¡¡QUEDA UN VERSION ESTATICA DEL PEZ!!
   
  void dibujar(){
   textFont(fuente);
+  textSize (15);
    if (portada == 0){
      background(0);
      inicio.dibujar();
