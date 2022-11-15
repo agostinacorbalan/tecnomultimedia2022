@@ -1,46 +1,39 @@
-class Enemigo{
+class Enemigo{ //BUSCAR MANERA DE QUE LOS OBSTACULOS SEAN VARIOS Y SE REINICIEN O REBOTEN EN LA PANTALLA 
   PImage obstaculos;
-  float x, y, tamX, tamY;
-  int vel;
+  float x, y, tamX, tamY, moveX, moveY;
+  int vel, direccion;
  Enemigo (){
-  this.tamX = height/5; 
-  this.tamY = width/5;
-  this.x = random (0, width);
-  this.y = random (-height, -5);
+
+ x = random (0, width);
+  y = random (-height, -5);
   vel = 2;
   obstaculos = loadImage ("../data/ob-" + int(random(3))+ ".png");
- }
+ }  
+  void dibujar(){
+   push();
+   image (obstaculos, x, y);
+   pop();
+   this.actualizar();
+  }
  
- void reiniciar(){
-    if ( x > width+100){
-    y= random (height);
-    x= -100;
-    vel= 2; 
-    }
-  // this.tamX = width/5;
-  // this.tamY = height/5;
-   // this.x = random (0, width);
-   // this.y = random (-height, -5);
- }
- 
- void actualizar(){
-   this.x--;
-   this.y = this.y--; 
-   if (this.x > width){
-    this.x = 0; 
+ void actualizar(){      //De este manera no cargan las imagenes ni se reinician
+   x--;
+   y = y--; 
+   if (x > width){
+    x = 0; 
    }
-   if (this.y <=5){
-     this.y = 11;
-   } else if (this.y >= width){ //-5
-     this.y = width; //-11
+   if (y <=5){
+     y = 11;
+   } else if (y >= width){ //-5
+     y = width; //-11
    }
    reiniciar();
  }
-
- void dibujar(){
-   this.actualizar();
-   push();
-   image (obstaculos, this.x, this.y, this.tamX, this.tamY); 
-   pop();
-  }
+  void reiniciar(){
+    if ( x > width-100){
+    y = random (height);
+    x= -100;
+    vel= 2; 
+    }
+ }
 }
