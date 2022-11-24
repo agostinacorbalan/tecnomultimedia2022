@@ -1,24 +1,22 @@
-//Agostina Corbalan 91301/2 - Comision 2
+//Corbalan, Agostina -Comision 2, 91301/2
+//Profesores: Matías Jauregui Lorda y Tobias Albirosa
 
-//¡PROBLEMA CON LAS BURBUJAS (solo se muestra una y se carga diferentes cada vez)!
-
+Juego game;
 import ddf.minim.*;
 Minim minim;
 AudioPlayer player;
-Contenedor game;
 
-void setup (){
+void setup(){
+  size(800,600);
+  game = new Juego();
   minim = new Minim (this);
   player = minim.loadFile ("a.mp3");
-  game = new Contenedor();
-  size (600, 400);
-  player.play();
-  player.loop();
 }
 
-void draw (){
- game.dibujar(); 
- game.actualizar();
- game.movimiento();
- game.pressed();
+void draw(){
+ game.dibujar();
+}
+
+void keyPressed(){
+  game.teclado();
 }
