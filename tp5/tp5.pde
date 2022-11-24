@@ -1,5 +1,6 @@
 //Corbalan, Agostina -Comision 2, 91301/2
 //Profesores: Matías Jauregui Lorda y Tobias Albirosa
+//Video: https://youtu.be/VFMuGOXurhA
 
 Juego game;
 import ddf.minim.*;
