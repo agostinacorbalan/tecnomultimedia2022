@@ -1,4 +1,3 @@
-//https://youtu.be/iGPMbcPy8uk
 void setup() {
   size(550, 550); 
    
