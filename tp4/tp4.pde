@@ -1,5 +1,4 @@
-//https://youtu.be/z6mFUeBFOnM
-//Corbalán Agostina 91301/2
+//Corbalan Agostina 91301/2
 //llevar el auto en la ruta sin tocar los obstaculos
 
 Ruta ruta;
